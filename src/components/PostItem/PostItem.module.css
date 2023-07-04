@@ -1,0 +1,55 @@
+.post {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 72px;
+  width: 350px;
+  padding: 5px;
+
+  box-sizing: border-box;
+
+  position: relative;
+  top: 50px;
+
+  color: white;
+
+  border: 1px solid #ff8303;
+  border-radius: 8px;
+}
+
+.postContent {
+  width: 245px;
+  height: 46px;
+  margin: 15px 5px 5px 15px;
+}
+
+.titleText {
+  font-size: 22px;
+  margin: 2px;
+  width: 180px;
+}
+
+.contentText {
+  font-size: 14px;
+  margin: 2px;
+  letter-spacing: 0.5px;
+  width: 265px;
+}
+
+.postButton {
+  box-sizing: border-box;
+
+  height: 32px;
+  width: 32px;
+
+
+  border-radius: 5px;
+
+  font-size: 20px;
+  padding: 0;
+
+  background-color: #1b1a17;
+  border: 1px solid #ff8303;
+  color: white;
+}

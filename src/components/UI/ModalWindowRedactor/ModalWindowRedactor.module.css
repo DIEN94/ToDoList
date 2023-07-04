@@ -1,0 +1,74 @@
+.modalWindowRedactor {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: none;
+  background: #070707;
+  opacity: 0.9;
+}
+
+.modalWindowRedactorContent {
+  width: 281px;
+  height: 300px;
+  border-radius: 10px;
+  padding: 10px 25px 25px 25px;
+  background: #1b1a17;
+  border-top: 4px solid #ff8303;
+}
+
+.modalWindowRedactor.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text {
+  padding: 0px;
+  margin: 5px;
+
+  background: #1b1a17;
+
+  color: white;
+  font-size: 18px;
+}
+
+.textarea {
+  height: 60%;
+  width: 100%;
+  border-radius: 7px;
+  padding: 5px;
+  box-sizing: border-box;
+
+  border: 1px solid #ff8303;
+  color: white;
+}
+
+.buttonBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #1b1a17;
+}
+
+.modalButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 24px;
+  width: 64px;
+  padding: 0px;
+  margin: 5px;
+  box-sizing: border-box;
+
+  border-radius: 5px;
+
+  color: white;
+  font-size: 12px;
+
+  background-color: #1b1a17;
+  border: 1px solid #ff8303;
+}

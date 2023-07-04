@@ -1,0 +1,27 @@
+.NoTasksElement {
+  display: flex;
+  justify-content: center;
+  padding: 0px;
+  margin: 5px;
+
+  position: relative;
+  top: 50px;
+
+  color: white;
+  font-size: 34px;
+}
+
+.hr {
+  display: flex;
+  justify-content: center;
+  width: 64px;
+  height: 2px;
+  padding: 0px;
+
+  position: relative;
+  top: 50px;
+  left: 150px;
+
+  border: 0;
+  background-color: #ff8303;
+}

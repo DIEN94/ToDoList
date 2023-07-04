@@ -1,0 +1,73 @@
+.modalWindowOfErrorPost {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: none;
+    background: #070707;
+    opacity: 0.9;
+}
+
+.modalWindowOfErrorPostContent {
+    width: 281px;
+    height: 143px;
+    border-radius: 10px;
+    padding: 25px;
+    background: #1B1A17;
+    border-top: 4px solid #FF8303;
+}
+
+.modalWindowOfErrorPost.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text {
+    display: flex;
+    justify-content: center;
+    padding: 0px;
+
+    position: relative;
+    top: 25px;
+
+    background: #1B1A17;
+
+    color: white;
+    font-size: 27px;
+}
+
+.buttonBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    top: 60px;
+
+    background: #1B1A17;
+}
+
+.modalButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 30px;
+    width: 80px;
+    padding: 0px;
+    margin: 5px;
+    box-sizing: border-box;
+
+    position: relative;
+    top: 0;
+
+    border-radius: 5px;
+
+    color: white;
+    font-size: 16px;
+
+    background-color: #1B1A17;
+    border: 1px solid #FF8303;
+}
