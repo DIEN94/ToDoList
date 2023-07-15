@@ -1,0 +1,36 @@
+.buttonForm {
+    width: 70px;
+    min-width: 70px;
+}
+
+.form {
+    display: flex;
+    padding-top: 20px;
+}
+
+.inputBox {
+    display: grid;
+    width: 100%;
+    gap: 5px;
+    padding-right: 5px;
+}
+
+/* .form{
+    display: grid;
+    grid-template-columns: 1fr 70px;
+    grid-template-rows: 35px 35px;
+
+
+    grid-template-areas: "a c" "b c";
+    row-gap: 5px;
+    column-gap: 10px;
+}
+.form input:nth-child(1){
+    grid-area: a;
+}
+.form input:nth-child(2){
+    grid-area: b;
+}
+.form button:first-child{
+    grid-area: c;
+} */

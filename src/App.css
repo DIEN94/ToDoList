@@ -1,0 +1,15 @@
+*{
+background-color: #1E1E24; 
+}
+
+#root {
+height: 100vh;
+margin: 0;
+padding: 0;
+}
+
+.App {
+width: 350px;
+height: 100vh;
+margin: auto;
+}

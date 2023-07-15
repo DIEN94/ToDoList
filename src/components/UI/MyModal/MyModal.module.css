@@ -1,0 +1,22 @@
+.myModal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: none;
+    background: rgba(7, 7, 7, 0.9);
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.myModal.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+  }
+
+.myModal.hide {
+  opacity: 0;
+  }
