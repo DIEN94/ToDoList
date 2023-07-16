@@ -2,8 +2,8 @@ import React, { useContext, useState } from "react";
 import { MyInput } from "../UI/input/MyInput";
 import { MyButton } from "../UI/button/MyButton";
 import { Post } from "../../type";
-import css from "./PostForm.module.css";
 import { useModalContext } from "../../contexts/ModalContext/ModalContext";
+import css from "./PostForm.module.css";
 
 
 interface IPostForm {

@@ -55,3 +55,20 @@
   background-color: #1b1a17;
   border: 1px solid #ff8303;
 }
+
+.errorText{
+  display: none;
+  justify-content: center;
+  padding: 0px;
+
+  position: relative;
+
+  background: black;
+
+  color: red;
+  font-size: 12px;
+}
+
+.errorText.active {
+  display: flex;
+}

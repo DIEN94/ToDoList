@@ -11,7 +11,6 @@ interface IModals{
 
 export const Modals: FC<IModals> = ({redactorPost, removePost}) => {
     const {isOpen,openModal,closeModal,modalName} = useModalContext()
-    // if(!isOpen) return null
   return (
     <div>
     <ModalWindowOfErrorPost isOpen={modalName.current === "error"} onClose={closeModal}/>

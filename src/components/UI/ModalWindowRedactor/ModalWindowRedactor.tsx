@@ -1,13 +1,14 @@
 import React, { ChangeEvent, FC, useState, useMemo, useEffect } from "react";
 import { MyButton } from "../button/MyButton";
-import classes from "./ModalWindowRedactor.module.css";
 import { MyInput } from "./../input/MyInput";
 import { IModal, MyModal } from "../MyModal/MyModal";
+import classes from "./ModalWindowRedactor.module.css";
 
 interface IModalWindowRedactor extends Omit<IModal, "children"> {
   redactorPost: (id: number, title: string, body: string) => void;
 }
-const Content = ({
+
+const ModalContent = ({
   onClose,
   redactorPost,
 }: {
@@ -17,13 +18,16 @@ const Content = ({
   const [id, setId] = useState(localStorage.getItem("id") || "");
   const [title, setTitle] = useState(localStorage.getItem("title") || "");
   const [body, setBody] = useState(localStorage.getItem("body") || "");
+  const [hasError, setHasError] = useState(false);
+
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    redactorPost(Number(id), String(title), String(body));
-    onClose();
-    // setId('');
-    // setTitle('');
-    // setBody('');
+    if (title.trim() !== "" && body.trim() !== "") {
+      redactorPost(Number(id), String(title), String(body));
+      onClose();
+    } else {
+      setHasError(true);
+    }
   };
 
   const handleChangeTitle = (event: ChangeEvent<HTMLInputElement>) => {
@@ -37,8 +41,15 @@ const Content = ({
   const closeModalWindow = () => {
     onClose();
   };
+
+  const rootClasses = [classes.errorText];
+  if (hasError) {
+    rootClasses.push(classes.active);
+  }
+
   return (
     <>
+      <p className={rootClasses.join(" ")}>All fields must be filled!</p>
       <form
         onSubmit={handleSubmit}
         className={classes.modalWindowRedactorContent}
@@ -77,22 +88,9 @@ const Content = ({
 };
 export const ModalWindowRedactor: FC<IModalWindowRedactor> = React.memo(
   ({ ...props }: IModalWindowRedactor) => {
-    // useMemo(() => {
-    //   setId(localStorage.getItem("id") || "");
-    //   setTitle(localStorage.getItem("title") || "");
-    //   setBody(localStorage.getItem("body") || "");
-    // }, [props.isOpen]);
-    // useMemo(() => {
-    //   setTimeout (()=>{
-    //     setId(localStorage.getItem('id') || '');
-    //     setTitle(localStorage.getItem('title') || '');
-    //     setBody(localStorage.getItem('body') || '');
-    //   }, 500)
-    // }, [props.isOpen])
-
     return (
       <MyModal {...props}>
-        <Content onClose={props.onClose} redactorPost={props.redactorPost} />
+        <ModalContent onClose={props.onClose} redactorPost={props.redactorPost} />
       </MyModal>
     );
   }

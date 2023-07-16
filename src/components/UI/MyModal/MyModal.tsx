@@ -8,7 +8,7 @@ export interface IModal {
   className?: string;
 }
 
-export const MyModal: FC<IModal> = ({ children, isOpen, onClose }) => {
+export const MyModal: FC<IModal> = ({ children, isOpen, onClose, className }) => {
   const [open, setOpen] = useState(isOpen);
 
   const rootClasses = [classes.myModal];
@@ -29,15 +29,12 @@ export const MyModal: FC<IModal> = ({ children, isOpen, onClose }) => {
   if (!open) return null;
   return (
     <div
-      onTransitionEnd={() => {
-        // const fn = onClose;
-        setOpen(false);
-        onClose();
-        console.log("end");
-      }}
+      onTransitionEnd={() => {setOpen(false); onClose();}}
       className={rootClasses.join(" ")}
     >
-      {children}
+      <div className = {className}>
+        {children} 
+      </div>
     </div>
   );
 };

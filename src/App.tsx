@@ -3,9 +3,9 @@ import { PostList } from "./components/PostList";
 import { PostForm } from "./components/PostForm/PostForm";
 import { NoTaskElement } from "./components/NoTaskElement/NoTaskElement";
 import { Post } from "./type";
-import "./App.css";
 import { ModalProvider } from "./contexts/ModalContext/ModalContext";
 import { Modals } from "./components/Modals";
+import "./App.css";
 
 function App() {
   const [posts, setPosts] = useState<Post[]>([]);
