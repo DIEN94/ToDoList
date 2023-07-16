@@ -34,7 +34,7 @@ export const PostItem: FC<IPostItem> = ({ id, title, body, key }) => {
         <img src={redactorImg} />
       </button>
       <button onClick={onRemoveClickHandler} className={classes.postButton}>
-        x
+        X
       </button>
     </div>
   );

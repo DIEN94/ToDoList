@@ -1,5 +1,7 @@
-import React, { FC, useEffect, useRef, useState } from "react";
+import React, { FC, RefObject, useEffect, useRef, useState } from "react";
 import classes from "./MyModal.module.css";
+import { useClickOutside } from "../../../hooks";
+
 
 export interface IModal {
   children: React.ReactNode;
@@ -10,7 +12,7 @@ export interface IModal {
 
 export const MyModal: FC<IModal> = ({ children, isOpen, onClose, className }) => {
   const [open, setOpen] = useState(isOpen);
-
+  const ref = useRef<HTMLDivElement>(null);
   const rootClasses = [classes.myModal];
 
   if (open) {
@@ -20,19 +22,24 @@ export const MyModal: FC<IModal> = ({ children, isOpen, onClose, className }) =>
     rootClasses.push(classes.hide);
   }
 
-  useEffect(() => {
-    if (isOpen) {
-      setOpen(isOpen);
-    }
-  }, [isOpen]);
+  useClickOutside(ref, onClose)
 
-  if (!open) return null;
+    useEffect(() => {
+      if (isOpen) {
+        setOpen(isOpen);
+      }
+    }, [isOpen]);
+
+    if (!open) return null;
+
+
+
   return (
     <div
       onTransitionEnd={() => {setOpen(false); onClose();}}
       className={rootClasses.join(" ")}
-    >
-      <div className = {className}>
+      >
+      <div className = {className} ref={ref}>
         {children} 
       </div>
     </div>
